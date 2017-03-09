@@ -1,0 +1,11 @@
+# robots.txt pour le site en ligne : tout sera indexé sauf les pages privés, inutiles ou incomplètes
+User-agent: *
+Disallow: /AjoutProduit.aspx
+Disallow: /AVenir.aspx
+Disallow: /Edition.aspx
+Disallow: /GestionCommentaires.aspx
+Disallow: /Redirection.aspx
+Disallow: /Recherche.aspx
+Disallow: /Panier.aspx
+Disallow: /Compte.aspx
+Disallow: /404.aspx

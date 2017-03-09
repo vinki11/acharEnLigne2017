@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AcharEnLigne2017(1)", "http://localhost:64991", "{2C5FD625-085C-4B5E-9C2E-DA917A7DBA23}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64991"
+		Debug.AspNetCompiler.PhysicalPath = "AcharEnLigne2017\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64991\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64991"
+		Release.AspNetCompiler.PhysicalPath = "AcharEnLigne2017\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64991\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "AcharEnLigne2017\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C5FD625-085C-4B5E-9C2E-DA917A7DBA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5FD625-085C-4B5E-9C2E-DA917A7DBA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
