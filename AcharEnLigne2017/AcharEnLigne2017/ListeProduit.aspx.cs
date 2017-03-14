@@ -1,14 +1,4 @@
-﻿/*
- * Description : Ficher de code de la page de liste de produit
- * Programmé par : François Légaré
- * Le : 3 février 2014
- * Historique des modifications
- * Par :
- * Le :
- * Modifications :
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -24,20 +14,20 @@ public partial class ListeProduit : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         // Si l'index sélectionné du dropdownlist est 0, afficher tous les produits.
-        if (dropDownListCategories.SelectedIndex == 0)
-        {
+        /*if (dropDownListCategories.SelectedIndex == 0)
+        {*/
             SqlDataSourceProduit.FilterExpression = "";
-        }
+        //}
     }
 
     protected void GridViewProduits_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
-        if (e.NewValues["produit_prix"] != null)
+        if (e.NewValues["prixVente"] != null)
         {
             // Transforme la chaîne en une valeur décimale.
             // Enlève le signe monétaire s'il était présent.
             // Transforme le séparateur de décimales, selon la culture utilisée, en point.
-            e.NewValues["produit_prix"] = decimal.Parse(e.NewValues["produit_prix"].ToString());
+            e.NewValues["prixVente"] = decimal.Parse(e.NewValues["prixVente"].ToString());
         }
     }
 

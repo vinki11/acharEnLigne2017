@@ -13,8 +13,7 @@ Modifications : Changement du gridView pour permettre la modification d'un produ
 <asp:Content ID="ContentListe" ContentPlaceHolderID="contentPlaceHolderContenu" runat="server">        
 
         <asp:SqlDataSource ID="SqlDataSourceProduit" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:ConnectionStringAcharEnLigne2017 %>" 
-            FilterExpression="produit_idCategorie={0}"
+            ConnectionString="<%$ ConnectionStrings:ConnectionStringAcharEnLigne2017 %>"
             SelectCommand="SELECT [idItem], [nomItem], [coutAchat], [prixVente], [quantite] FROM [item] INNER JOIN [accessoire] ON [idItem] = [idItem]">
             <%--<FilterParameters>
                 <asp:ControlParameter Name="categorie_id" ControlID="dropDownListCategories" PropertyName="SelectedValue" Type="Int32" />
@@ -57,25 +56,13 @@ Modifications : Changement du gridView pour permettre la modification d'un produ
                             </EditItemTemplate>
                         </asp:TemplateField>
 
-                        <%-- Colonne de la description dans le GridView --%>
-                        <asp:TemplateField HeaderText="Description" SortExpression="produit_description">
-                            <ItemTemplate>
-                                <asp:Label ID="labelDesc" runat="server" Text='<%# Eval("produit_description") %>' />
-                            </ItemTemplate>
-                            <EditItemTemplate>
-                                <asp:TextBox ID="textBoxDesc" runat="server" Text='<%# Bind("produit_description") %>'/>
-                                <asp:RequiredFieldValidator ID="validationDescRequis" runat="server" ControlToValidate="textBoxDesc"
-                                    ErrorMessage="requis" CssClass="erreurvalidateur" SetFocusOnError="True" ForeColor="Red" ValidationGroup="modif" />
-                            </EditItemTemplate>
-                        </asp:TemplateField>
-
                         <%-- Colonne du prix du produit dans le GridView --%>
                         <asp:TemplateField HeaderText="Prix" SortExpression="produit_prix">
                             <ItemTemplate>
-                                <asp:Label ID="labelPrix" runat="server" Text='<%# Eval("produit_prix") %>' Width="100px" />
+                                <asp:Label ID="labelPrix" runat="server" Text='<%# Eval("prixVente") %>' Width="100px" />
                             </ItemTemplate>
                             <EditItemTemplate>
-                                <asp:TextBox ID="textBoxPrix" runat="server" MaxLength="10" Text='<%# Bind("produit_prix", "{0:F2}") %>'/>
+                                <asp:TextBox ID="textBoxPrix" runat="server" MaxLength="10" Text='<%# Bind("prixVente", "{0:F2}") %>'/>
                                 <asp:RequiredFieldValidator ID="validationPrixRequis" runat="server" ControlToValidate="textBoxPrix"
                                     ErrorMessage="requis" CssClass="erreurvalidateur" SetFocusOnError="True" ForeColor="Red" ValidationGroup="modif" />
                                 <asp:CompareValidator ID="CompareValidatorPrix" runat="server" Operator="DataTypeCheck" Type="Double"
@@ -84,19 +71,19 @@ Modifications : Changement du gridView pour permettre la modification d'un produ
                         </asp:TemplateField>
 
                         <%-- Colonne de l'image du produit dans le GridView --%>
-                        <asp:TemplateField HeaderText="Image" SortExpression="produit_prix">
+                        <asp:TemplateField HeaderText="Image" SortExpression="prixVente">
                             <ItemTemplate>
-                                <asp:Image ID="imageProduit" ImageUrl='<%# Eval("produit_image", "~/medias/commun/produits/{0}").ToString() %>' runat="server" CssClass="boiteimage" Width="120px"/>
+                                <asp:Image ID="imageItem" ImageUrl='<%# Eval("imageItem", "~/medias/commun/produits/accessoires/{0}").ToString() %>' runat="server" CssClass="boiteimage" Width="120px"/>
                             </ItemTemplate>
                             <EditItemTemplate>
-                                <asp:TextBox ID="textBoxImage" runat="server" MaxLength="50" Text='<%# Bind("produit_image") %>'/>
+                                <asp:TextBox ID="textBoxImage" runat="server" MaxLength="50" Text='<%# Bind("imageItem") %>'/>
                                 <asp:RequiredFieldValidator ID="validationImageRequis" runat="server" ControlToValidate="textBoxImage"
                                     ErrorMessage="requis" CssClass="erreurvalidateur" SetFocusOnError="True" ForeColor="Red" ValidationGroup="modif" />
                             </EditItemTemplate>
                         </asp:TemplateField>
 
                         <%-- Colonne du nombre d'item a ajouter au panier dans le GridView --%>
-                        <asp:TemplateField HeaderText="Ajout panier" SortExpression="produit_prix">
+                        <asp:TemplateField HeaderText="Ajout panier" SortExpression="prixVente">
                             <ItemTemplate>
                                 <asp:TextBox ID="textBoxQte" TextMode="Number" runat="server" Text="0" class="textboxform" min="0" max="999" step="1" Width="50px"/>
                                 <asp:Button ID="buttonAddPanier" runat="server" Text="Ajouter Panier" OnClick="buttonAddPanier_Click"></asp:Button>
@@ -105,7 +92,7 @@ Modifications : Changement du gridView pour permettre la modification d'un produ
                         
                      </Columns>
                      <EmptyDataTemplate>
-                        <asp:Label ID="labelCategorieVide" runat="server" Text="Il n'y a aucun produit correspondant à la catégorie sélectionnée." CssClass="classeMessage" />
+                        <asp:Label ID="labelCategorieVide" runat="server" Text="Il n'y a aucun accesoire correspondant à la catégorie sélectionnée." CssClass="classeMessage" />
                      </EmptyDataTemplate>
                 </asp:GridView>
                 <asp:Label ID="labelMessage" runat="server" ForeColor="Red" CssClass="textemargin" />
