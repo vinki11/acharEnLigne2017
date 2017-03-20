@@ -1,12 +1,4 @@
-﻿/*
- * Description : Ficher de code de la page maîtresse du site
- * Programmé par : François Légaré
- * Le : 3 février 2014
- * Historique des modifications
- * Par :
- * Le :
- * Modifications :
- */
+﻿
 
 using System;
 using System.Collections.Generic;

@@ -23,7 +23,7 @@ Modifications :
 		<li id="accueilLi" runat="server"><a href="Default.aspx">Accueil</a></li>
 		<%--<li id="inscriptionLi" runat="server"><a href="Inscription.aspx"><asp:Label ID="labelInscription" runat="server" Text="Inscription"></asp:Label></a></li>--%>
 		<li id="listeLi" runat="server"><a href="ListeProduit.aspx">Produits</a></li>
+        <li id="coordonneesLi" runat="server"><a href="Vehicules.aspx">Véhicules</a></li>
         <li id="panierLi" runat="server"><a href="Panier.aspx"><i class="fa fa-shopping-cart"></i></a></li>
-	    <%--<li id="coordonneesLi" runat="server"><a href="Coordonnees.aspx">Coordonnées</a></li>--%>
 	</ul>
 </nav>
