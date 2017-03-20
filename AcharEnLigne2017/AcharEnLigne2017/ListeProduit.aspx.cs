@@ -16,7 +16,8 @@ public partial class ListeProduit : System.Web.UI.Page
         // Si l'index sélectionné du dropdownlist est 0, afficher tous les produits.
         /*if (dropDownListCategories.SelectedIndex == 0)
         {*/
-            SqlDataSourceProduit.FilterExpression = "";
+            //SqlDataSourceProduit.FilterExpression = "";
+            
         //}
     }
 

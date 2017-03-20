@@ -1,26 +1,16 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListeProduit.aspx.cs" Inherits="ListeProduit" %>
 
-<%--
-Description : Page de la liste des produits du site
-Programmé par : François Légaré
-Le : 3 février 2014
-Historique des modifications
-Par : François Légaré
-Le : 28 février 2014
-Modifications : Changement du gridView pour permettre la modification d'un produit
---%>
-
 <asp:Content ID="ContentListe" ContentPlaceHolderID="contentPlaceHolderContenu" runat="server">        
 
         <asp:SqlDataSource ID="SqlDataSourceProduit" runat="server" 
             ConnectionString="<%$ ConnectionStrings:ConnectionStringAcharEnLigne2017 %>"
-            SelectCommand="SELECT [idItem], [nomItem], [coutAchat], [prixVente], [quantite] FROM [item] INNER JOIN [accessoire] ON [idItem] = [idItem]">
+            SelectCommand="SELECT [idItem], [nomItem], [coutAchat], [prixVente], [imageItem], [quantite] FROM [item] INNER JOIN [accessoire] ON [idItem] = [idItem]">
             <%--<FilterParameters>
                 <asp:ControlParameter Name="categorie_id" ControlID="dropDownListCategories" PropertyName="SelectedValue" Type="Int32" />
             </FilterParameters>--%>
         </asp:SqlDataSource>
 
-       <%-- <asp:SqlDataSource ID="SqlDataSourceCategorie" runat="server" 
+        <%--<asp:SqlDataSource ID="SqlDataSourceCategorie" runat="server" 
             ConnectionString="<%$ ConnectionStrings:ConnectionStringAcharEnLigne2017 %>"         
             SelectCommand="SELECT categorie_id, categorie_nom FROM categorie ORDER BY categorie_nom">            
         </asp:SqlDataSource>--%>
