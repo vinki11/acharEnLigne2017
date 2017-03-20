@@ -4,16 +4,6 @@
 <%@ Register TagPrefix="UserControl" TagName="Authentif" Src="~/Authentification.ascx" %>
 <%@ Register TagPrefix="UserControl" TagName="PiedPage" Src="~/PiedPage.ascx" %>
 
-<%--
-Description : Page maîtresse qui gère toutes les pages du site
-Programmé par : François Légaré
-Le : 3 février 2014
-Historique des modifications
-Par :
-Le :
-Modifications :
---%>
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -177,12 +167,6 @@ Modifications :
                 <div class="row">
                     <div class="12u">
 
-                        <!-- Banner -->
-                        <div id="banner" class="box">
-                            <%--<asp:Literal ID="labelTextePage" runat="server">
-									    
-                            </asp:Literal>--%>
-                        </div>
 
                     </div>
                 </div>
