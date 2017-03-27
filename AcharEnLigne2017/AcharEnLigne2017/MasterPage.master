@@ -2,7 +2,6 @@
 
 <%@ Register TagPrefix="UserControl" TagName="MenuPrin" Src="~/MenuPrincipal.ascx" %>
 <%@ Register TagPrefix="UserControl" TagName="Authentif" Src="~/Authentification.ascx" %>
-<%@ Register TagPrefix="UserControl" TagName="PiedPage" Src="~/PiedPage.ascx" %>
 
 <!DOCTYPE html>
 
@@ -10,8 +9,7 @@
 <head id="Head1" runat="server">
     <title id="titrePage" runat="server" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="Description temporaire en attendant de le faire dynamiquement" />
-    <meta name="keywords" content="Informatique, vente en ligne, francophone, pièces d'ordinateur, carte graphique, carte mère, performance, processeur, bas prix, ordinateur" />
+    <meta name="description" content="Salut Fano!" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,800" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Oleo+Script:400" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -140,18 +138,14 @@
             <div class="container">
                 <h1 id="h1Accueil" runat="server" />
 
-                <%--<UserControl:Authentif ID="authentif" runat="server" />--%>
+                <UserControl:Authentif ID="authentif" runat="server" />
 
                 <!-- Header -->
                 <header id="header">
 
                     <!-- Logo -->
                     <div id="logo">
-                        <h1><a href="#" id="A1">Pièces+</a></h1>
-                        <%--<div id="tfheader">
-													<asp:TextBox ID="textBoxChercher" runat="server" class="tftextinput" /><asp:Button ID="buttonChercher" runat="server" Text="Chercher" CssClass="tfbutton" />
-												<div class="tfclear"></div>
-											</div>--%>
+                        <img src="Medias/Commun/logo.jpg" alt="Logo original" />
                     </div>
 
                     <!-- Nav -->
@@ -177,7 +171,6 @@
             </asp:ContentPlaceHolder>
         </div>
 
-        <%--<UserControl:PiedPage ID="piedPage" runat="server" />--%>
     </form>
 </body>
 </html>

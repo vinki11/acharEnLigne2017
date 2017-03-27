@@ -1,13 +1,4 @@
-﻿/*
- * Description : Ficher de code du contrôle pour le menu
- * Programmé par : François Légaré
- * Le : 12 mars 2014
- * Historique des modifications
- * Par :
- * Le :
- * Modifications :
- */
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -46,22 +37,28 @@ public partial class MenuPrincipal : System.Web.UI.UserControl
         {
             DataRowView donnees = dataViewPage[0];
 
+            string test = donnees[0].ToString();
+
             if (donnees[0].ToString() == "Accueil")
             {
                 accueilLi.Attributes.Add("class", "current_page_item");
             }
-            else if (donnees[0].ToString() == "Liste de produits")
+            else if (donnees[0].ToString() == "Accessoires")
             {
                 listeLi.Attributes.Add("class", "current_page_item");
             }
-            //else if (donnees[0].ToString() == "Inscription")
-            //{
-            //    inscriptionLi.Attributes.Add("class", "current_page_item");
-            //}
-            //else if (donnees[0].ToString() == "Coordonn&eacute;es")
-            //{
-            //    coordonneesLi.Attributes.Add("class", "current_page_item");
-            //}
+            else if (donnees[0].ToString() == "Inscription")
+            {
+                inscriptionLi.Attributes.Add("class", "current_page_item");
+            }
+            else if (donnees[0].ToString() == "Vehicules")
+            {
+                vehiculesLi.Attributes.Add("class", "current_page_item");
+            }
+            else if (donnees[0].ToString() == "Votre panier")
+            {
+                panierLi.Attributes.Add("class", "current_page_item");
+            }
         }
         else
         {

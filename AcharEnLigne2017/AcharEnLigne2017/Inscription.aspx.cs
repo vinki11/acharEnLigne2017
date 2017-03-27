@@ -1,13 +1,4 @@
-﻿/*
- * Description : Ficher de code de la page d'inscription du site
- * Programmé par : François Légaré
- * Le : 7 février 2014
- * Historique des modifications
- * Par :
- * Le :
- * Modifications :
- */
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Data;

@@ -1,14 +1,4 @@
-﻿/*
- * Description : Ficher de code de la page d'édition
- * Programmé par : François Légaré
- * Le : 21 février 2014
- * Historique des modifications
- * Par :
- * Le :
- * Modifications :
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;

@@ -1,13 +1,4 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Edition.aspx.cs" Inherits="Edition" ValidateRequest="false" %>
-<%--
-Description : Page permettant d'éditer le contenu de la table page de certaines pages
-Programmé par : François Légaré
-Le : 21 février 2014
-Historique des modifications
-Par :
-Le :
-Modifications :
---%>
 
 <asp:Content ID="ContentEdition" ContentPlaceHolderID="contentPlaceHolderContenu" runat="server">
 
