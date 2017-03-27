@@ -38,15 +38,16 @@ public partial class Panier : System.Web.UI.Page
 
             float grandTotal = 0.0f;
 
+            var rowId = 0;
             foreach (var item in listePanier)
             {
-                html.Append("<tr>");
+                html.Append("<tr>");;
                 for (int i = 0; i <= 2; i++)
                 {
                     html.Append("<td>");
                     if (i == 1)
                     {
-                        html.Append("<input type='Number' value='" + item.Split('&')[i] + "'>");
+                        html.Append("<input runat='server' id=qte" + rowId + " type='Number' value='" + item.Split('&')[i] + "'> ");
                     }
                     else
                     {
@@ -54,6 +55,7 @@ public partial class Panier : System.Web.UI.Page
                     }
                     html.Append("</td>");
                 }
+                rowId++;
                 html.Append("</tr>");
 
             }
@@ -65,36 +67,75 @@ public partial class Panier : System.Web.UI.Page
             PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
 
         }
-        /*if (Session["liste_panier"] != null)
+        
+    }
+
+    protected void buttonSavePanier_Click(object sender, EventArgs e)
+    {
+        List<String> listePanier = new List<string>();
+        List<String> listePanierNew = new List<string>();
+        //Trouver session si elle existe pui ajouter item dans panier
+        if (Session["liste_panier"] != null)
         {
-            List<String> listePanier = (List<String>)Session["liste_panier"];
-
-            float grandTotal = 0.0f;
-
-            foreach (var item in listePanier)
+            listePanier = (List<String>)Session["liste_panier"];
+            listePanier.ForEach((item) =>
             {
-                 TableRow tr = new TableRow();
-                 tr.Cells.Add(new TableCell());
-                 tr.Cells.Add(new TableCell());
-                 tr.Cells.Add(new TableCell());
-                 tr.Cells[0].Text = item.Split('&')[0];
-                 tr.Cells[1].Text = item.Split('&')[1];
-                 tr.Cells[1].
-                 tr.Cells[2].Text = item.Split('&')[2];
-                 grandTotal += Single.Parse(item.Split('&')[2]);
-                 TablePanier.Rows.Add(tr);
-            }
+                listePanierNew.Add(item.ToString());
+            });
+        }
+        foreach (var item in listePanier)
+        {
+            string nom = item.Split('&')[0];
+            Control ctrl = FindControl("qte1");
+            string quant = ctrl.ToString();
+            string prixTotal = item.Split('&')[2];
+            int ind = indexPanier(listePanier, nom);
+            listePanierNew[ind] = nom + "&" + quant + "&" + prixTotal;
+        }
 
-            TableRow trTotal = new TableRow();
-            trTotal.Cells.Add(new TableCell());
-            trTotal.Cells.Add(new TableCell());
-            trTotal.Cells.Add(new TableCell());
-            trTotal.Cells[0].Text = "Total";
-            trTotal.Cells[1].Text = "";
-            trTotal.Cells[2].Text = grandTotal.ToString();
-            TablePanier.Rows.Add(trTotal);*
+        Session["liste_panier"] = listePanierNew;
+
+        /*
+        string nom = ((Label)row.Cells[0].FindControl("labelNom")).Text;
+        int qte = Int32.Parse(((TextBox)row.Cells[3].FindControl("textBoxQte")).Text);
+        */
+
+
+        //Trouver index dans le panier, si il existe update la qte, sinon ajouter produit
+
+        /*if (index != -1)
+        {
+            int ancienneQte = Int32.Parse(listePanier[index].Split('&')[1]);
+            qte += ancienneQte;
+            totalPrix = prix * qte;
+            listePanier[index] = nom + "&" + qte + "&" + totalPrix;
+        }
+        else
+        {
+            listePanier.Add(nom + "&" + qte + "&" + totalPrix);
         }*/
+    }
+
+    protected void buttonBuy_Click(object sender, EventArgs e)
+    {
 
     }
+
+    protected int indexPanier(List<String> listePanier, string nom)
+    {
+        int index = -1;
+        //Trouver si l'objet à ajouter est déjà dans le panier
+        for (int i = 0; i < listePanier.Count; i++)
+        {
+            if (listePanier[i].Split('&')[0] == nom)
+            {
+                index = i;
+                break;
+            }
+        }
+
+        return index;
+    }
+
 
 }
