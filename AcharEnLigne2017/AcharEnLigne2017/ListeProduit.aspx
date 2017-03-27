@@ -87,7 +87,5 @@
                 </asp:GridView>
                 <asp:Label ID="labelMessage" runat="server" ForeColor="Red" CssClass="textemargin" />
             </div>
-            
         </div>
-    
 </asp:Content>
