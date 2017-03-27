@@ -1,16 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Inscription.aspx.cs" Inherits="Inscription" %>
 <%@ Register TagPrefix="recaptcha" Namespace="Recaptcha" Assembly="Recaptcha" %>
 
-<%--
-Description : Page d'inscription sur le site
-Programmé par : François Légaré
-Le : 7 février 2014
-Historique des modifications
-Par :
-Le :
-Modifications :
---%>
-
 <asp:Content ID="ContentInscription" ContentPlaceHolderID="contentPlaceHolderContenu" runat="server">
 
     <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
