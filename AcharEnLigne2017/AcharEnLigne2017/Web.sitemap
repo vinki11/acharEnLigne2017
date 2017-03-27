@@ -2,10 +2,8 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="~/Default.aspx" title="Accueil"  description="Accueil du site de vente de pièces d'ordinateur francophone fictif.">
         <siteMapNode url="~/Compte.aspx" title="Votre compte"  description="Page de gestion du compte." />
-        <siteMapNode url="~/Fiche.aspx" title="Fiche"  description="Fiche du produit que vous souhaitez voir." />
         <siteMapNode url="~/Inscription.aspx" title="Inscription"  description="Page permettant l'inscription sur le site" />
-        <siteMapNode url="~/ListeProduit.aspx" title="Liste de produits"  description="Page contenant une liste de quelques produits présents sur le site." />
+        <siteMapNode url="~/Accessoires.aspx" title="Accessoires"  description="Page contenant une liste de quelques produits présents sur le site." />
         <siteMapNode url="~/Panier.aspx" title="Votre panier"  description="Liste des objets que vous avez ajouté à votre panier." />
-        <siteMapNode url="~/Recherche.aspx" title="Recherche"  description="Page contenant les résultats qui correspondent le plus à la recherche." />
     </siteMapNode>
 </siteMap>
