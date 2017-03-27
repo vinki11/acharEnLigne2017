@@ -8,7 +8,7 @@
 				<div class="12u">
                     <div id="banner" class="box">
 					    <p><a href="Default.aspx"><asp:Label ID="labelAccueil" runat="server" Text="Accueil"></asp:Label></a></p>
-                        <p><a href="ListeProduit.aspx"><asp:Label ID="labelListe" runat="server" Text="Accessoires"></asp:Label></a></p>
+                        <p><a href="Accessoires.aspx"><asp:Label ID="labelListe" runat="server" Text="Accessoires"></asp:Label></a></p>
                         <p><a href="Vehicules.aspx"><asp:Label ID="labelCoor" runat="server" Text="Vehicules"></asp:Label></a></p>
                     </div>
                 </div>
