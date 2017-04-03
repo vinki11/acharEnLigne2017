@@ -897,7 +897,8 @@
 /*********************************************************************************/
 
 #conneclang{
-	
+    margin-right: -110px;
+    margin-bottom: 5px;
 	float: right;
 }
 
@@ -1047,7 +1048,12 @@ div.grille .lignesgrille {
 
 .textboxform{
 
-    width: 200px;
+    width: 300px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    margin-top: 11px;
+    padding-bottom: 0px;
+    padding-top: 0px;
 
 }
 
@@ -1058,24 +1064,14 @@ div.grille .lignesgrille {
 }
 
 .buttonform {
-	-moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
 	box-shadow:inset 0px 1px 0px 0px #dcecfb;
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bddbfa), color-stop(1, #7d8185) );
 	background:-moz-linear-gradient( center top, #bddbfa 5%, #7d8185 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddbfa', endColorstr='#7d8185');
 	background-color:#bddbfa;
-	-webkit-border-top-left-radius:0px;
-	-moz-border-radius-topleft:0px;
 	border-top-left-radius:0px;
-	-webkit-border-top-right-radius:0px;
-	-moz-border-radius-topright:0px;
 	border-top-right-radius:0px;
-	-webkit-border-bottom-right-radius:0px;
-	-moz-border-radius-bottomright:0px;
 	border-bottom-right-radius:0px;
-	-webkit-border-bottom-left-radius:0px;
-	-moz-border-radius-bottomleft:0px;
 	border-bottom-left-radius:0px;
 	text-indent:0px;
 	border:1px solid #000000;
@@ -1088,9 +1084,10 @@ div.grille .lignesgrille {
 	height:40px;
 	line-height:40px;
 	width:100px;
-	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #528ecc;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 .buttonform:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7d8185), color-stop(1, #bddbfa) );
@@ -1233,6 +1230,6 @@ div.grille .lignesgrille {
 
 .texteformulaire {
 
-    line-height: 1.7em;
-
+    margin-top: 0px;
+    line-height: 50px;
 }

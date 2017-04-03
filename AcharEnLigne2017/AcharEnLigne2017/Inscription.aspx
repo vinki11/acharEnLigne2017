@@ -39,38 +39,35 @@
             <asp:Label ID="labelNomFamille" runat="server" Text="Nom de famille : " CssClass="texteformulaire"></asp:Label><br/>
             <asp:Label ID="labelCourriel" runat="server" Text="Courriel : " CssClass="texteformulaire"></asp:Label><br/>
             <asp:Label ID="labelDescription" runat="server" Text="Description : " CssClass="texteformulaire"></asp:Label><br/><br/>
-            <recaptcha:RecaptchaControl ID="recaptcha" runat="server" PublicKey="6Le5Z_ASAAAAAJ1DERMSMX9cHAmsmO_HZAUdEMe_" PrivateKey="6Le5Z_ASAAAAAAm-bjYaob0RgajYZRiebWEqnVuG" />
-            <asp:CustomValidator ID="recaptchaValidator" runat="server" OnServerValidate="recaptchaValidator_ServerValidate" ErrorMessage="Incorrect" ForeColor="Red" ValidationGroup="inscription" EnableClientScript="false" />
         </div>
 
         <div id="formulairetextbox">
-            <asp:TextBox ID="textBoxCodeUsager" runat="server" class="textboxform" MaxLength="50" />
+            <asp:TextBox ID="textBoxCodeUsager" runat="server" CssClass="textboxform" MaxLength="50" />
             <asp:RequiredFieldValidator ID="requiredFieldValidatorUsager" runat="server" ControlToValidate="textBoxCodeUsager"
             ErrorMessage="Vous devez entrer un code d'usager." ForeColor="Red" ValidationGroup="inscription"></asp:RequiredFieldValidator>
 
-            <asp:TextBox ID="textBoxMotDePasse" runat="server" class="textboxform"  TextMode="password" MaxLength="50" />
+            <asp:TextBox ID="textBoxMotDePasse" runat="server" CssClass="textboxform"  TextMode="password" MaxLength="50" />
             <asp:RequiredFieldValidator ID="requiredFieldValidatorPasse" runat="server" ControlToValidate="textBoxMotDePasse"
             ErrorMessage="Vous devez entrer un mot de passe." ForeColor="Red" ValidationGroup="inscription"></asp:RequiredFieldValidator>
 
-            <asp:TextBox ID="textBoxConfirmMdp" runat="server" class="textboxform"  TextMode="password" MaxLength="50" />
+            <asp:TextBox ID="textBoxConfirmMdp" runat="server" CssClass="textboxform"  TextMode="password" MaxLength="50" />
             <asp:CompareValidator ID="CompareValidatorMotDePasse" runat="server" ControlToValidate="textBoxMotDePasse"
             ControlToCompare="textBoxConfirmMdp" ErrorMessage="Mots de passe différents." ForeColor="Red" ValidationGroup="inscription"/>
 
-            <asp:TextBox ID="textBoxPrenom" runat="server" class="textboxform" MaxLength="50" />
+            <asp:TextBox ID="textBoxPrenom" runat="server" CssClass="textboxform" MaxLength="50" />
             <asp:RequiredFieldValidator ID="requiredFieldValidatorPrenom" runat="server" ControlToValidate="textBoxPrenom"
             ErrorMessage="Vous devez entrer votre prenom." ForeColor="Red" ValidationGroup="inscription"></asp:RequiredFieldValidator>
 
-            <asp:TextBox ID="textBoxNomFamille" runat="server" class="textboxform" MaxLength="50" />
+            <asp:TextBox ID="textBoxNomFamille" runat="server" CssClass="textboxform" MaxLength="50" />
             <asp:RequiredFieldValidator ID="requiredFieldValidatorNom" runat="server" ControlToValidate="textBoxNomFamille"
             ErrorMessage="Vous devez entrer votre nom." ForeColor="Red" ValidationGroup="inscription"></asp:RequiredFieldValidator>
 
-            <asp:TextBox ID="textBoxCourriel" runat="server" class="textboxform" MaxLength="75" />
+            <asp:TextBox ID="textBoxCourriel" runat="server" CssClass="textboxform" MaxLength="75" />
             <asp:RequiredFieldValidator ID="requiredFieldValidatorCourriel" runat="server" ControlToValidate="textBoxCourriel"
             ErrorMessage="Vous devez entrer votre courriel." ForeColor="Red" ValidationGroup="inscription"></asp:RequiredFieldValidator>
 
-            <asp:TextBox ID="textBoxDescription" runat="server" class="textboxform" TextMode="MultiLine" Rows="3" /><br/><br/><br/><br/><br/><br/><br/>
+            <asp:TextBox ID="textBoxDescription" runat="server" CssClass="textboxform" TextMode="MultiLine" Rows="3" />
 
-            
         </div>
         <asp:Label ID="labelMessage" runat="server" Text="Message" CssClass="classeMessage"></asp:Label>
         <div id="formulairebutton">

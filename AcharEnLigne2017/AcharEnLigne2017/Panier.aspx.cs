@@ -11,7 +11,17 @@ public partial class Panier : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        afficherPanier();
+        if (Request.QueryString["mode"] != null && Request.QueryString["mode"] == "ajax")
+        {
+            //Session["FirstName"] = Request.Form["FirstName"] ?? "";
+            StringBuilder html = new StringBuilder();
+            html.Append("<p>Ca vient de passé par du Ajax Yo. Voici la quantité du premier cossin : " + Session["liste_panier"] + " </p>");
+            PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
+        }
+        else
+        {
+            afficherPanier();
+        }
     }
 
     protected void afficherPanier()
@@ -20,7 +30,7 @@ public partial class Panier : System.Web.UI.Page
         StringBuilder html = new StringBuilder();
 
         //Table start.
-        html.Append("<table border = '1'>");
+        html.Append("<table id='tableTest' border = '1'>");
 
         //Building the Header row.
         html.Append("<tr>");
@@ -62,6 +72,7 @@ public partial class Panier : System.Web.UI.Page
 
             //Table end.
             html.Append("</table>");
+            html.Append("<input type='hidden' id='produitsCount' value='" + listePanier.Count + "'>");
 
             //Append the HTML string to Placeholder.
             PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
@@ -72,7 +83,7 @@ public partial class Panier : System.Web.UI.Page
 
     protected void buttonSavePanier_Click(object sender, EventArgs e)
     {
-        List<String> listePanier = new List<string>();
+       /* List<String> listePanier = new List<string>();
         List<String> listePanierNew = new List<string>();
         //Trouver session si elle existe pui ajouter item dans panier
         if (Session["liste_panier"] != null)
@@ -85,12 +96,14 @@ public partial class Panier : System.Web.UI.Page
         }
         foreach (var item in listePanier)
         {
+            //Control ctrl = FindControlRecursive(PlaceHolder1, "qte0");
+            TextBox txtAmount = (TextBox)PlaceHolder1.FindControl("qte" + 0);
             string nom = item.Split('&')[0];
-            Control ctrl = FindControl("qte1");
-            string quant = ctrl.ToString();
+            //Control ctrl = FindControl("qte0");
+            //string quant = ctrl.ToString();
             string prixTotal = item.Split('&')[2];
             int ind = indexPanier(listePanier, nom);
-            listePanierNew[ind] = nom + "&" + quant + "&" + prixTotal;
+            //listePanierNew[ind] = nom + "&" + quant + "&" + prixTotal;
         }
 
         Session["liste_panier"] = listePanierNew;
@@ -114,6 +127,25 @@ public partial class Panier : System.Web.UI.Page
         {
             listePanier.Add(nom + "&" + qte + "&" + totalPrix);
         }*/
+    }
+
+    public static Control FindControlRecursive(Control control, string id)
+    {
+        if (control == null) return null;
+        //try to find the control at the current level
+        Control ctrl = control.FindControl(id);
+
+        if (ctrl == null)
+        {
+            //search the children
+            foreach (Control child in control.Controls)
+            {
+                ctrl = FindControlRecursive(child, id);
+
+                if (ctrl != null) break;
+            }
+        }
+        return ctrl;
     }
 
     protected void buttonBuy_Click(object sender, EventArgs e)
