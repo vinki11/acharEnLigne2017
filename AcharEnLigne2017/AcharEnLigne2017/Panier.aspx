@@ -6,7 +6,8 @@
         <div class="grille">
             <asp:PlaceHolder ID = "PlaceHolder1" runat="server" />
            
-            <asp:Button ID="buttonSavePanier" runat="server" Text="Sauvegarder Panier" OnClick="buttonSavePanier_Click"></asp:Button>
+            <input type="button" id="buttonSavePanier" runat="server" value="Sauvegarder Panier" onclick="getValue()" />
+            <%--<asp:Button ID="buttonSavePanier" runat="server" Text="Sauvegarder Panier" onclientclick="getValue()"></asp:Button>--%>
             <asp:Button ID="buttonBuy" runat="server" Text="Proceder aux achats" OnClick="buttonBuy_Click"></asp:Button>
         </div> 
     </div>
