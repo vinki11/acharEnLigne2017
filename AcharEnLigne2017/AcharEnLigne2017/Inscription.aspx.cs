@@ -41,7 +41,7 @@ public partial class Inscription : System.Web.UI.Page
     /// <param name="e"></param>
     protected void buttonEnregistrer_Click(object sender, EventArgs e)
     {
-        if (Page.IsValid && recaptcha.IsValid)
+        if (Page.IsValid)
         {
             try
             {
@@ -111,17 +111,5 @@ public partial class Inscription : System.Web.UI.Page
             default:
                 return "Une erreur inconnue a été rencontrée. Veuillez vérifier les informations entrées puis réessayer. Si le problème persiste, veuillez contacter l'adminsitrateur du système.";
         }
-    }
-
-
-    /// <summary>
-    /// Méthode qui sert à valider si le captcha a bien été entré
-    /// </summary>
-    /// <param name="source"></param>
-    /// <param name="args"></param>
-    protected void recaptchaValidator_ServerValidate(object source, ServerValidateEventArgs args)
-    {
-        this.recaptcha.Validate();
-        args.IsValid = this.recaptcha.IsValid;
     }
 }
