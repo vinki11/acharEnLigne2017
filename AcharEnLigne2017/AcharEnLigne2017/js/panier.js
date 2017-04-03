@@ -12,15 +12,26 @@
         text += x.elements[i].value + "<br>";
     }*/
 
+    $('#ContentPlaceHolderContenu_reload').val("1");
+
     for (var i = 0; i < $('#produitsCount').val() ; i++) {
-        alert($('#qte' + i).val());
+        //alert("Maintenant = " + $('#qte' + i).val());
+        //alert("Avant = " + $('#listePanier' + i).val());
+        $('#listePanier' + i).val($('#qte' + i).val());
+        $('#ContentPlaceHolderContenu_Hidden' + i).val($('#qte' + i).val());
     }
+
+    //for (var i = 0; i < $('#produitsCount').val() ; i++) {
+    //    alert("New valeur listepanier donc maintenant qui etait avant  = " + $('#listePanier' + i).val());
+    //}
+    //$.post("Panier.aspx");
+    //alert($('#listePanier').val());
    /* $.post(document.URL + '?mode=ajax',
      {
          'liste_panier': $("#qte0").val(),
      });*/
 
-    $.ajax({
+    /*$.ajax({
         type: "Post",
         url: "Panier.aspx",
         data: "{'liste_panier':'0'}",
@@ -28,5 +39,5 @@
         success: function (result) {
             alert(result.d);
         }
-    });
+    });*/
 }
