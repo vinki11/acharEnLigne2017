@@ -54,14 +54,14 @@
                         <%-- Colonne du nombre d'item a ajouter au panier dans le GridView --%>
                         <asp:TemplateField HeaderText="Ajout panier" SortExpression="prixVente">
                             <ItemTemplate>
-                                <asp:TextBox ID="textBoxQte" TextMode="Number" runat="server" Text="0" class="textboxform" min="0" max="999" step="1" Width="50px"/>
+                                <%--  <asp:TextBox ID="textBoxQte" TextMode="Number" runat="server" Text="0" class="textboxform" min="0" max="999" step="1" Width="50px"/>--%>
                                 <asp:Button ID="buttonAddPanier" runat="server" Text="Ajouter Panier" OnClick="buttonAddPanier_Click"></asp:Button>
                             </ItemTemplate>
                         </asp:TemplateField>
                         
                      </Columns>
                      <EmptyDataTemplate>
-                        <asp:Label ID="labelCategorieVide" runat="server" Text="Il n'y a aucun accesoire correspondant à la catégorie sélectionnée." CssClass="classeMessage" />
+                        <asp:Label ID="labelCategorieVide" runat="server" Text="Il n'y a aucun véhicule correspondant à la catégorie sélectionnée." CssClass="classeMessage" />
                      </EmptyDataTemplate>
                 </asp:GridView>
                 <asp:Label ID="labelMessage" runat="server" ForeColor="Red" CssClass="textemargin" />
