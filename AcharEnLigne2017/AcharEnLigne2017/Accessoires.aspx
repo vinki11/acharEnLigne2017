@@ -39,6 +39,13 @@
                             </EditItemTemplate>
                         </asp:TemplateField>
 
+                        <%-- Colonne de la quantité restante en inventaire du produit dans le GridView --%>
+                        <asp:TemplateField HeaderText="Quantité restante" SortExpression="produit_qteRest">
+                            <ItemTemplate>
+                                <asp:Label ID="labelQteRest" runat="server" Text='<%# Eval("quantite") %>' Width="100px" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
                         <%-- Colonne de l'image du produit dans le GridView --%>
                         <asp:TemplateField HeaderText="Image" SortExpression="prixVente">
                             <ItemTemplate>

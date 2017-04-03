@@ -24,9 +24,10 @@ public partial class ListeProduit : System.Web.UI.Page
     protected void ajouterPanier(GridViewRow row)
     {
         string nom = ((Label)row.Cells[0].FindControl("labelNom")).Text;
-        int qte = Int32.Parse(((TextBox)row.Cells[3].FindControl("textBoxQte")).Text);
+        int qte = Int32.Parse(((TextBox)row.Cells[4].FindControl("textBoxQte")).Text);
+        int qteRest = Int32.Parse(((Label)row.Cells[2].FindControl("labelQteRest")).Text);
         //Si la quantitée > 0 on fait le traitement
-        if (qte > 0)
+        if (qte > 0 && qte <= qteRest)
         {
             float prix = Single.Parse(((Label)row.Cells[1].FindControl("labelPrix")).Text);
             float totalPrix = prix * qte;
@@ -57,6 +58,12 @@ public partial class ListeProduit : System.Web.UI.Page
             ((TextBox)row.Cells[3].FindControl("textBoxQte")).Text = "0";
 
             Session["liste_panier"] = listePanier;
+        }
+        else if (qte > qteRest)
+        {
+            // Faire validation avec variable de session
+            Response.Write("<script type='text/javascript'>alert('La quantité demandée est trop grande.  Veuillez réessayer.');</script>");
+            ((TextBox)row.Cells[3].FindControl("textBoxQte")).Text = "0";
         }
 
     }
