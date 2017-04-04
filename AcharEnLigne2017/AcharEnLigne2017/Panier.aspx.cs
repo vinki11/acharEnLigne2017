@@ -10,6 +10,7 @@ using System.Web.UI.HtmlControls;
 
 public partial class Panier : System.Web.UI.Page
 {
+   
     protected void Page_Load(object sender, EventArgs e)
     {
         List<String> listHidden = new List<String>();
@@ -112,8 +113,9 @@ public partial class Panier : System.Web.UI.Page
                 }
                 if (i == 2)
                 {
+                    float prixIndividuel = float.Parse(item.Split('&')[i]) / float.Parse(listePanier[rowId].Split('&')[1]);
                     //Calculer eventuellement le nouveau prix comme y faut
-                    newPrix = item.Split('&')[i];
+                    newPrix = (int.Parse(newQte) * prixIndividuel).ToString();
                 }
             }
             newListePanier.Add(newName + "&" + newQte + "&" + newPrix);
