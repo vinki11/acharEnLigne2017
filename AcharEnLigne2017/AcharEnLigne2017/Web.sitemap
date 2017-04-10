@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="~/Default.aspx" title="Accueil"  description="Accueil du site de vente de pièces d'ordinateur francophone fictif.">
+    <siteMapNode url="~/Default.aspx" title="Accueil"  description="Accueil du site de vente de véhicue.">
         <siteMapNode url="~/Compte.aspx" title="Votre compte"  description="Page de gestion du compte." />
         <siteMapNode url="~/Inscription.aspx" title="Inscription"  description="Page permettant l'inscription sur le site" />
         <siteMapNode url="~/Accessoires.aspx" title="Accessoires"  description="Page contenant une liste de quelques produits présents sur le site." />

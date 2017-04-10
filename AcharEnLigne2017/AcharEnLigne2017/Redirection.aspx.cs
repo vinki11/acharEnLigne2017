@@ -1,12 +1,4 @@
-﻿/*
- * Description : Ficher de code de la page de redirection
- * Programmé par : François Légaré
- * Le : 25 février 2014
- * Historique des modifications
- * Par :
- * Le :
- * Modifications :
- */
+﻿
 
 using System;
 using System.Collections.Generic;

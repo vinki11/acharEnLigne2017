@@ -7,8 +7,11 @@
             <asp:PlaceHolder ID = "PlaceHolder1" runat="server" />
            
             <%--<input type="button" id="buttonSavePanier" runat="server" value="Sauvegarder Panier" onclick="getValue()" />--%>
-            <asp:Button ID="buttonSavePanier" runat="server" Text="Sauvegarder Panier" onclientclick="getValue()"></asp:Button>
-            <asp:Button ID="buttonBuy" runat="server" Text="Proceder aux achats" OnClick="buttonBuy_Click"></asp:Button>
+            <div align="center">
+                <asp:Button ID="buttonSavePanier" runat="server" Text="Sauvegarder Panier" onclientclick="getValue()"></asp:Button>
+                <asp:Button ID="buttonBuy" runat="server" Text="Proceder aux achats" OnClick="buttonBuy_Click"></asp:Button>
+            </div>
+            
             <input type='hidden' id='reload' value='0' runat="server"/>
             <input type='hidden' id='Hidden0' value='0' runat="server"/>
             <input type='hidden' id='Hidden1' value='0' runat="server"/>
